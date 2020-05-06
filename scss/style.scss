@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 $font-stack: 'Lato', sans-serif;
 $color-dark: #242333;
+$color-primary: #6feaf6;
 
 * {
   box-sizing: border-box;
@@ -69,7 +70,7 @@ body {
   border-top-right-radius: 10px;
 
   &.selected {
-    background-color: #6feaf6;
+    background-color: $color-primary;
   }
 
   &.occupied {
@@ -92,18 +93,27 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  perspective: 1200px;
+  margin-bottom: 30px;
+
+  .screen {
+    background-color: #fff;
+    height: 70px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  }
+
+  .row {
+    display: flex;
+  }
 }
 
-.row {
-  display: flex;
-}
+p.text {
+  margin: 5px 0;
 
-.screen {
-  background-color: #fff;
-  height: 70px;
-  width: 100%;
-  margin: 15px;
+  span {
+    color: $color-primary;
+  }
 }
