@@ -5,3 +5,12 @@ const total = document.getElementById('total');
 const movieSelect = document.getElementById('movie');
 
 const ticketPrice = +movieSelect.value; //+ turns a string into a number
+
+container.addEventListener('click', e => {
+  if (
+    e.target.classList.contains('seat') &&
+    !e.target.classList.contains('occupied')
+  ) {
+    e.target.classList.toggle('selected');
+  }
+});
